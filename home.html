@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio_Gibas.pl</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><img src="./pictures/logo.png" alt="logo" class="logo"></a>
+
+        <nav class="navbar">
+            <a href="#" class="active" style=" --i:1;">Home</a>
+            <a href="galery.html" style=" --i:2;">Galery</a>
+            <a href="https://github.com/Gibasjusz" style=" --i:3;">MyGit</a>
+            <a href="about.html" style=" --i:4;">ReadMore</a>
+            <a href="apps.html" style=" --i:5;">MyApps</a>
+        </nav>
+        <img src="./pictures/Burger.png" alt="menu" class="burger">
+    </header>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <section class="home">
+            <div class="home-content">
+                <h3>Hello, It's Me</h3>
+                <h1>Jakub Gibas</h1>
+                <h3>And I'm a <span>Graphic Designer</span></h3>
+                <p>This is my portfolio website <br>
+                    Here you can read about me, contact with me
+                    and look up my artworks
+                </p>
+                <div class="social-media">
+                    <a href="https://github.com/Gibasjusz"><img src="./pictures/git.png" alt=""></a>
+                    <a href="https://github.com/Gibasjusz"><img src="./pictures/git-lab.png" alt=""></a>
+                    <a href="https://github.com/Gibasjusz"><img src="./pictures/html.png" alt=""></a>
+                    <a href="https://github.com/Gibasjusz"><img src="./pictures/css.png" alt=""></a>
+                    <br>
+                    <a href="./portfolio_website_game/game.html"><button>Look up my page with JavaScript games</button></a>
+                </div>
+            </div>
+            
+            <div class="home-image">
+                <img src="./pictures/gibiai.png" alt="Jakub ">
+            </div>
+        </section>
+    </div>
+    <script>
+        const menuHamburger = document.querySelector(".burger");
+        const navLinks = document.querySelector(".navbar");
+
+        menuHamburger.addEventListener('click',()=>{
+            navLinks.classList.toggle('mobile-menu')
+        });
+    </script>
+</body>
+</html>

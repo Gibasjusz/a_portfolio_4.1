@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit';
+}
+
+body {
+    background: #1f242d;
+}
+
+@font-face {
+	font-family: 'Kanit';
+	src: url(./fonts_game/kanit.ttf);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #f69ea5;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#home {
+    color: #f69ea5;
+}
+
+.home {
+    color: white;
+    font-size: 30px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    animation: slideLeft 1s ease forwards;
+}
+
+.home-content p{
+    animation: slideTop 1s ease forwards;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.controller img{
+    max-width: 550px;
+    opacity: 0;
+    animation: Zoom 2s ease forwards, float 4s ease-in-out infinite;
+    animation-delay: 1s, 3s;
+}
+
+@keyframes Zoom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+}
+
+.im{
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+@media screen and (max-width: 600px) {  
+    .header {
+        background: linear-gradient(#1f242d, #1f242d, #1f242d, transparent);
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+    
+    .navbar a {
+        font-size: 18px;
+        font-weight: 300;
+        margin-left: 15px;
+    }
+
+    .controller img {
+        max-width: 350px;
+    }
+
+    .home-content h3{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .home-content h1{
+        font-size: 36px;
+        font-weight: 500;
+    }
+    
+    .home-content p{
+        font-size: 16px;
+    }
+}

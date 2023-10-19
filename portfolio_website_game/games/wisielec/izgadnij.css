@@ -1,0 +1,84 @@
+@font-face {
+	font-family: 'Righteous';
+	src: url('Righteous-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Righteous;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(169, 169, 241), rgb(119, 220, 253), pink, orange);
+}
+
+.tablica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgb(70, 70, 70);
+    width: 20vw;
+    height: 20vh;
+}
+
+#start, .guzik {
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 28px;
+    background-color: white;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(44, 44, 44); 
+}
+
+#start:active {
+    width: 120px;
+    height: 40px;
+    background-color: black;
+}
+
+.guzik:active {
+    width: 120px;
+    height: 40px;
+    background-color: black;
+}
+
+.komunikat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 10vh;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(44, 44, 44);
+    font-size: 30px;
+}
+
+.wisielec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgb(70, 70, 70);
+    width: 20vw;
+    height: 30vh;
+}
+
+.wisielec img {
+    width: 200px;
+    height: 200px;
+}

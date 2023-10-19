@@ -1,0 +1,177 @@
+@font-face {
+	font-family: 'Righteous';
+	src: url('Righteous-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    font-family: Righteous;
+}
+
+body {
+    background: linear-gradient(-45deg, #3a3a3a, #161616, #3a3a3a, #464646);
+    color: white;
+    max-width: 100dvw;
+}
+
+.score {
+    min-height: 25dvh;
+    max-width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 20px;
+    background: linear-gradient(45deg, #3d3055, #67348e, #bf4f7a, #d1595c, #e6886d);
+    font-size: 40px;
+    border-bottom: 10px double white;
+}
+
+.score img {
+    height: 180px;
+}
+
+.score span {
+    font-size: 80px;
+}
+
+.click {
+    min-height: 75dvh;
+    max-width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 20px;
+    background: url('library.jpg');
+    font-size: 40px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 10px double white;
+}
+
+.click img {
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    background: transparent;
+    border: 10px double white;
+}
+
+.click :active {
+    width: 300px;
+    height: 300px;
+}
+
+.shop {
+    min-height: 100dvh;
+    max-width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    background: url('shop.jpg');
+    font-size: 40px;
+    background-size: cover;
+    background-position: center;
+    border: 10px double white;
+}
+
+.shop button {
+    background: url(planks.jpg);
+    width: 300px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 30px;
+    margin: 5px;
+    color: white;
+    background-position: 110px 190px;
+}
+
+.shop h3{
+    font-size: 25px;
+}
+
+.shop p{
+    font-size: 20px;
+}
+
+.shop button:active{
+    width: 280px;
+    height: 140px;
+    color: transparent;
+}
+
+.shop .pulka {
+    flex-direction: row;
+}
+
+/* upgrade 1 */
+
+.rekawiczki {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    background: linear-gradient(45deg, #3d3055, #67348e, #bf4f7a, #d1595c, #e6886d);
+}
+
+.rekawica {
+    width: 7vw;
+    animation: image 2s ease infinite;
+}
+
+@keyframes image {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* upgrade 2 */
+
+.wands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    background: linear-gradient(45deg, #3d3055, #67348e, #bf4f7a, #d1595c, #e6886d);
+}
+
+.wand {
+    width: 7vw;
+}
+
+/* upgrade 12 */
+
+.ksiegi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    background: linear-gradient(45deg, #3d3055, #67348e, #bf4f7a, #d1595c, #e6886d);
+}
+
+.ksiega {
+    width: 7vw;
+}
+

@@ -1,0 +1,263 @@
+	<!Doctype html>
+	<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Ping Pong w JavaScript</title>
+		<style>
+			body {margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; background-color:darkgray;}
+			canvas {border: 3px solid #fff; }
+			@font-face {
+				font-family: 'Righteous';
+				src: url('kanit.ttf');
+			}
+			#h11 {
+				position: absolute; top: 10px; left: 30px; border: solid 2px black; width: 1000px; height: 40px; text-align: center;
+				color: orange;
+				text-align: center-left;
+				font-family: Arial, sans-serif;
+				box-shadow: 3px 3px 3px #777;
+				background-color: white;
+				font-family: 'Righteous';
+				border-radius: 10px 20px;
+			}
+			
+			#h11:hover {
+				box-shadow: 6px 6px 6px #777;
+			}
+			#unpause { color: orange; display: block; position: absolute; top: 80px; left: 30px; border: solid 2px black; width: 100px; height: 20px; background-color: white; font-family: 'Righteous'; text-decoration: none; border-radius: 10px; text-align: center;}
+			#unpause:hover{
+				box-shadow: 6px 6px 6px #777;
+			}
+
+			#pause { color: orange; display: block; position: absolute; top: 110px; left: 30px; border: solid 2px black; width: 100px; height: 20px; background-color: white; font-family: 'Righteous'; text-decoration: none; border-radius: 10px; text-align: center;}
+			#pause:hover{
+				box-shadow: 6px 6px 6px #777;
+			}
+
+			#idz { color: orange; display: block; position: absolute; top: 140px; left: 30px; border: solid 2px black; width: 100px; height: 20px; background-color: white; font-family: 'Righteous'; text-decoration: none; border-radius: 10px; text-align: center;}
+			#idz:hover{
+				box-shadow: 6px 6px 6px #777;
+			}
+			#wynik{
+				position: absolute; top: 60%; left: 40%;
+				color: orange;
+				font-size: 60px;
+				font-family: 'Righteous'
+			}
+			#wynik2{
+				position: absolute; top: 60%; left: 60%;
+				color: orange;
+				font-size: 60px;
+				font-family: 'Righteous'
+			}
+		</style>
+	</head>
+	
+	<body>
+		<canvas></canvas>
+		<h1 id="h11">Dżibasowy Ping Pong</h1>
+		<a id="pause"href="javascript:pause();"> Pause </a>
+		<a id="unpause" href="javascript:unpause();"> Play </a>
+		<a id="idz" href="./../game.html"> Główna </a>
+		<span id="wynik">0</span>
+		<span id="wynik2">0</span>
+		
+		<script>
+			const canvas = document.querySelector('canvas');
+			const ctx = canvas.getContext('2d');
+			
+			canvas.width = 1000;
+			canvas.height = 500;
+			
+			const cw = canvas.width
+			const ch = canvas.height
+			
+			const ballSize = 20; //wielkość piłki
+			let ballX = cw/2-ballSize/2
+			let ballY = ch/2-ballSize/2
+			
+			const paddelHeight = 100; //paletki
+			const paddelWidth = 20;
+			
+			const p1X = 70;
+			const p2X = 910;
+			
+			let p1Y = 200;
+			let p2Y = 200;
+			
+			const lineWeight = 6;
+			const lineHeight = 16;
+			
+			let ballSpeedX = 7;
+			let ballSpeedY = 7;
+			
+			function p1() {
+				ctx.fillStyle = 'orange';
+				ctx.fillRect(p1X,p1Y,paddelWidth,paddelHeight)
+			}
+			
+			function p2() {
+				ctx.fillStyle = 'orange';
+				ctx.fillRect(p2X,p2Y,paddelWidth,paddelHeight)
+			}
+			
+			function ball() {
+				ctx.fillStyle = 'white';
+				ctx.fillRect(ballX,ballY,ballSize,ballSize);
+				
+				ballX += ballSpeedX;
+				ballY += ballSpeedY;
+				
+				if (ballY <= 0 || ballY + ballSize >= ch )
+					{
+					ballSpeedY = -ballSpeedY;
+					}
+					
+				if (ballX <= 0 || ballX + ballSize >= cw) {
+					ballSpeedX = - ballSpeedX;
+					}
+					
+				if (ballX == p1X ) {
+					if (   (ballY > p1Y)   &&   (ballY < (p1Y + paddelHeight))   ) {
+						ballSpeedX = - ballSpeedX;
+					}
+				}
+				
+				if (ballX == p2X ) {
+					if (   (ballY > p2Y)   &&   (ballY < (p2Y + paddelHeight))   ) {
+						ballSpeedX = - ballSpeedX;
+					}
+				}
+				
+				if (ballX == 0) {
+					ballX = cw/2-ballSize/2;
+					ballY = ch/2-ballSize/2;
+					liczba2 = liczba2 + 1;
+
+				}
+				
+				if (ballX == 980) {
+					ballX = cw/2-ballSize/2;
+					ballY = ch/2-ballSize/2;
+					liczba = liczba + 1;
+				}
+				if (liczba2 == 11) {
+					alert("GAME OVER");
+				}
+				if (liczba == 11) {
+					alert("Wygrałeś")
+				}
+				}
+			
+			function table() {
+				//boisko
+				ctx.fillStyle = 'black';
+				ctx.fillRect(0,0,cw,ch);
+				//środek boiska
+				
+				for (let linePossition = 20; linePossition < ch ; linePossition +=30) {
+				ctx.fillStyle = "gray"
+				ctx.fillRect(cw/2 - 3, linePossition, lineWeight, lineHeight)
+				}
+				
+			}
+			
+			topCanvas = canvas.offsetTop;
+			console.log(topCanvas)
+			
+			function playerPosition(e) {
+				//console.log("pozycja myszy to" + (e.clientY - topCanvas))
+				p1Y = e.clientY - topCanvas - paddelHeight / 2;
+				
+				if(p1Y > ch - paddelHeight) {
+				 p1Y = ch - paddelHeight
+				}
+				
+				if (p1Y <= 0) {
+					p1Y = 0;
+				}
+				
+			}
+			canvas.addEventListener("mousemove", 
+			playerPosition)
+			
+
+				
+			function p2Position() {
+				var middlePaddle = p2Y + paddelHeight / 2;
+				var middleBall = ballY + ballSize / 2;
+				
+				if (ballX > 500) {
+						if (middlePaddle - middleBall > 200) {
+							console.log("widze")
+							p2Y -= 35;
+						} else if(middlePaddle - middleBall > 50) {
+							p2Y -= 30;
+						}
+						else if(middlePaddle - middleBall < -200) {
+							p2Y += 35;
+						} else if(middlePaddle - middleBall < -50) {
+							p2Y += 30;
+						}
+						
+					
+					else if (ballX <= 500 && ballX > 150) {
+						if (middlePaddle - middleBall > 100) {
+							p2Y -= 3
+						}
+						else if (middlePaddle - middleBall < -100) {
+							p2Y += 3
+						}
+					}
+				}
+			}
+			
+			
+			
+			function game() {
+				table()
+				ball()
+				p1()
+				p2()
+				p2Position()
+				wynik()
+				win()
+				win2()
+			}
+			
+
+			
+			var silnik=setInterval(game,1000 / 60);
+			
+			
+			function pause() {
+				clearInterval(silnik);
+			}
+			
+			function unpause() {
+				silnik=setInterval(game,1000 / 60);
+			}
+			function win(){
+				if (liczba = 3) {
+					alert("GAME OVER");
+			}}
+			function win2(){
+				if (liczba2 > 3) {
+					alert("GAME OVER")
+			}}
+
+
+			var liczba=0
+			setInterval(() => {
+    		wynik.innerHTML = liczba;}, 500);
+
+    		var liczba2=0
+			setInterval(() => {
+    		wynik2.innerHTML = liczba2;}, 500);
+
+			pause()
+	</script>
+	
+	</body>
+	</html>

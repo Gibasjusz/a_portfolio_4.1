@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicCliker</title>
+    <link rel="stylesheet" href="magic.css">
+</head>
+<body>
+    <section class="ekran">
+        <section class="game">
+            <div class="score">
+                <img src="magic.png" alt="your-power">  :  <span id="mana">0</span>
+            </div>
+            
+            <div class="click">
+                <img src="book2.jpg" alt="magic_book" class="clicker" onclick="absorbuj()">
+            </div>
+
+            <div class="rekawiczki">
+
+            </div>
+
+            <div class="wands">
+                
+            </div>
+
+            <div class="ksiegi">
+
+            </div>
+
+            <div class="shop">
+                    <h1>SKLEP</h1>
+                <div class="pulka">
+                    <button onclick="magiczna_rekawica()">
+                        <h3>Magiczna dłoń</h3>
+                        <p>[Zwiększ przypływ o 1]</p>
+                        <p>cena:<span id="c1">20</span></p>
+                    </button>
+                    <button onclick="rozdzka()">
+                        <h3>Różdżka</h3>
+                        <p>[Zwiększ czerpanie o 1]</p>
+                        <p>cena:<span id="c2">30</span></p>
+                    </button>
+                    <button onclick="zaklecie()">
+                        <h3>Zaklecie</h3>
+                        <p>[Zwiększ przypływ o 10]</p>
+                        <p>cena:<span id="c3">200</span></p>
+                    </button>
+                </div>
+                <div class="pulka">
+                    <button onclick="magiczna_kula()">
+                        <h3>Magiczna kula</h3>
+                        <p>[Zwiększ przypływ o 25]</p>
+                        <p>cena:<span id="c4">350</span></p>
+                    </button>
+                    <button onclick="runa_przyplywu()">
+                        <h3>Runa przypływu</h3>
+                        <p>[Zwiększ przypływ o 50]</p>
+                        <p>cena:<span id="c5">600</span></p>
+                    </button>
+                    <button onclick="uczen_czarnoksieznika()">
+                        <h3>Uczeń czarnoksiężnika</h3>
+                        <p>[Zwiększ przypływ o 100]</p>
+                        <p>cena:<span id="c6">1200</span></p>
+                    </button>
+                </div>
+                <div class="pulka">
+                    <button onclick="krysztalowa_czaszka()">
+                        <h3>Kryształowa czaszka</h3>
+                        <p>[Zwiększ czerpanie o 10]</p>
+                        <p>cena:<span id="c7">250</span></p>
+                    </button>
+                    <button onclick="adept_magii()">
+                        <h3>Adept magii</h3>
+                        <p>[Zwiększ czerpanie o 25]</p>
+                        <p>cena:<span id="c8">1000</span></p>
+                    </button>
+                    <button onclick="mana_potion()">
+                        <h3>Mana potion</h3>
+                        <p>[Zwiększ czerpanie o 100]</p>
+                        <p>cena:<span id="c9">10000</span></p>
+                    </button>
+                </div>
+                <div class="pulka">
+                    <button onclick="wyzszy_mag()">
+                        <h3>Wyższy mag</h3>
+                        <p>[Zwiększ przypływ o 150]</p>
+                        <p>cena:<span id="c10">10500</span></p>
+                    </button>
+                    <button onclick="kokaina()">
+                        <h3>Kokaina</h3>
+                        <p>[Zwiększ przypływ o 200]</p>
+                        <p>cena:<span id="c11">20000</span></p>
+                    </button>
+                    <button onclick="ksiega_zakazanej_wiedzy()">
+                        <h3>Księga zakazanej wiedzy</h3>
+                        <p>[Zwiększ przypływ o 500]</p>
+                        <p>cena:<span id="c12">50000</span></p>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="magic.js"></script>
+</body>
+</html>
